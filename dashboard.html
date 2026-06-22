@@ -1,0 +1,159 @@
+# `dashboard.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f4f6f9;
+}
+
+header{
+background:#1e3a5f;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+background:#14263d;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:yellow;
+}
+
+.container{
+padding:40px;
+}
+
+.dashboard{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:15px;
+box-shadow:0 4px 12px rgba(0,0,0,0.2);
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h3{
+color:#1e3a5f;
+margin-bottom:15px;
+font-size:24px;
+}
+
+.card p{
+font-size:28px;
+font-weight:bold;
+}
+
+footer{
+background:#14263d;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Dashboard Statistics</h1>
+
+</header>
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="services.html">Services</a>
+<a href="reports.html">Reports</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="logout.html">Logout</a>
+
+</nav>
+
+<div class="container">
+
+<div class="dashboard">
+
+<div class="card">
+<h3>Total Users</h3>
+<p>1500</p>
+</div>
+
+<div class="card">
+<h3>Active Users</h3>
+<p>1250</p>
+</div>
+
+<div class="card">
+<h3>Revenue</h3>
+<p>₹3,00,000</p>
+</div>
+
+<div class="card">
+<h3>Transactions</h3>
+<p>5400</p>
+</div>
+
+<div class="card">
+<h3>Notifications</h3>
+<p>32</p>
+</div>
+
+<div class="card">
+<h3>Pending Tasks</h3>
+<p>18</p>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>© 2026 Laptop Lending System</p>
+
+</footer>
+
+</body>
+
+</html>
+```
