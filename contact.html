@@ -1,19 +1,18 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact</title>
+<title>Registration & Contact</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial,sans-serif;
 background:#f4f6f9;
 }
 
@@ -31,8 +30,8 @@ text-align:center;
 }
 
 nav a{
-text-decoration:none;
 color:white;
+text-decoration:none;
 margin:15px;
 font-weight:bold;
 }
@@ -41,63 +40,66 @@ nav a:hover{
 color:yellow;
 }
 
+main{
+padding:30px;
+}
+
 section{
 background:white;
-margin:40px;
-padding:40px;
-border-radius:15px;
-box-shadow:0 4px 12px rgba(0,0,0,0.2);
-}
-
-h2{
-color:#1e3a5f;
-margin-bottom:25px;
-}
-
-form{
-display:flex;
-flex-direction:column;
-}
-
-input,textarea{
-padding:12px;
-margin-bottom:18px;
-border:1px solid #ccc;
-border-radius:6px;
-font-size:16px;
-}
-
-.gender{
+padding:30px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,.2);
 margin-bottom:20px;
 }
 
-.buttons{
-display:flex;
-gap:15px;
+aside{
+background:#fff;
+padding:20px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,.2);
+margin-top:20px;
 }
 
-.buttons input{
+input,
+textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+box-sizing:border-box;
+}
+
+.gender,
+.skills{
+margin:15px 0;
+}
+
+.gender input,
+.skills input{
+width:auto;
+margin-right:5px;
+}
+
+button{
+padding:12px 20px;
+margin:10px 5px;
 background:#1e3a5f;
 color:white;
 border:none;
-font-weight:bold;
 cursor:pointer;
+border-radius:5px;
 }
 
-.buttons input:hover{
+button:hover{
 background:#284d7a;
 }
 
-p{
-font-size:18px;
-margin:12px 0;
-}
-
-.social a{
-text-decoration:none;
-margin-right:15px;
-font-weight:bold;
-color:#1e3a5f;
+.editable{
+border:1px solid #ccc;
+padding:15px;
+margin-top:10px;
+border-radius:5px;
 }
 
 footer{
@@ -105,23 +107,42 @@ background:#14263d;
 color:white;
 text-align:center;
 padding:15px;
-margin-top:30px;
+margin-top:20px;
 }
 
 </style>
+
+<script>
+
+function validateForm(){
+
+let name=document.getElementById("name").value;
+
+if(name.trim()==""){
+alert("Please Enter Your Name");
+return false;
+}
+
+alert("Registration Successful");
+
+window.location.href="dashboard.html";
+
+return false;
+
+}
+
+</script>
 
 </head>
 
 <body>
 
 <header>
-
-<h1>Contact & Registration</h1>
-
+<h1>Laptop & Gadget Lending System</h1>
+<p>Smart Device Lending Platform</p>
 </header>
 
 <nav>
-
 <a href="index.html">Home</a>
 <a href="dashboard.html">Dashboard</a>
 <a href="services.html">Services</a>
@@ -129,28 +150,50 @@ margin-top:30px;
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 <a href="logout.html">Logout</a>
-
 </nav>
+
+<main>
 
 <section>
 
+<article>
+
 <h2>Registration Form</h2>
 
-<form>
+<form onsubmit="return validateForm()">
 
-<input type="text" placeholder="Enter Full Name">
+<input
+type="text"
+id="name"
+placeholder="Full Name"
+required>
 
-<input type="email" placeholder="Enter Email">
+<input
+type="email"
+placeholder="Email Address"
+required>
 
-<input type="tel" placeholder="Enter Phone Number">
+<input
+type="tel"
+pattern="[0-9]{10}"
+placeholder="Phone Number"
+required>
 
-<input type="password" placeholder="Enter Password">
+<input
+type="date">
+
+<input
+type="time">
+
+<input
+type="number"
+min="18"
+max="80"
+placeholder="Age">
 
 <div class="gender">
 
-<label><b>Gender:</b></label>
-
-<br><br>
+<label><b>Gender</b></label><br><br>
 
 <input type="radio" name="gender"> Male
 
@@ -160,54 +203,76 @@ margin-top:30px;
 
 </div>
 
-<input type="date">
+<div class="skills">
 
-<textarea rows="5" placeholder="Enter Address"></textarea>
+<label><b>Skills / Interests</b></label><br><br>
 
-<div class="buttons">
+<input type="checkbox"> Programming
 
-<input type="submit" value="Submit">
+<input type="checkbox"> Networking
 
-<input type="reset" value="Reset">
+<input type="checkbox"> Hardware
 
 </div>
+
+<textarea
+rows="5"
+placeholder="Address">
+</textarea>
+
+<h3>Additional Comments</h3>
+
+<div
+class="editable"
+contenteditable="true"
+spellcheck="true">
+
+Type your comments here...
+
+</div>
+
+<br>
+
+<button type="submit">Submit</button>
+
+<button type="reset">Reset</button>
+
+<button
+type="button"
+onclick="window.location.href='index.html'">
+
+Cancel
+
+</button>
 
 </form>
 
-</section>
-
-<section>
-
-<h2>Contact Information</h2>
-
-<p><b>Email:</b> support@gadgetlending.com</p>
-
-<p><b>Phone:</b> +91 9876543210</p>
-
-<p><b>Address:</b> Coimbatore, Tamil Nadu, India</p>
-
-<div class="social">
-
-<a href="#">Instagram</a>
-
-<a href="#">LinkedIn</a>
-
-<a href="#">Facebook</a>
-
-</div>
+</article>
 
 </section>
+
+<aside>
+
+<h3>Help & Instructions</h3>
+
+<p>
+Fill all mandatory fields correctly before submitting the form.
+Use a valid email address and a 10-digit phone number.
+</p>
+
+</aside>
+
+</main>
 
 <footer>
 
 <p>
-© 2026 Laptop and Gadget Lending System |
-Designed by Rekha Ramani
+Student Name: Rekha Ramani |
+Laptop & Gadget Lending System |
+Email: support@gadgetlending.com
 </p>
 
 </footer>
 
 </body>
-
 </html>
-```

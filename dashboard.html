@@ -1,22 +1,15 @@
-# `dashboard.html`
-
-```html
 <!DOCTYPE html>
-<html lang="en">
 
+<html>
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Dashboard</title>
 
 <style>
 
 body{
-margin:0;
 font-family:Arial;
 background:#f4f6f9;
+margin:0;
 }
 
 header{
@@ -36,53 +29,36 @@ nav a{
 color:white;
 text-decoration:none;
 margin:15px;
-font-weight:bold;
-}
-
-nav a:hover{
-color:yellow;
 }
 
 .container{
-padding:40px;
+padding:30px;
 }
 
 .dashboard{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
+gap:20px;
 }
 
 .card{
 background:white;
-padding:35px;
-border-radius:15px;
-box-shadow:0 4px 12px rgba(0,0,0,0.2);
+padding:25px;
+border-radius:12px;
 text-align:center;
-transition:0.3s;
+box-shadow:0 4px 10px rgba(0,0,0,.2);
+transition:.3s;
 }
 
 .card:hover{
 transform:translateY(-8px);
 }
 
-.card h3{
-color:#1e3a5f;
-margin-bottom:15px;
-font-size:24px;
-}
-
-.card p{
-font-size:28px;
-font-weight:bold;
-}
-
-footer{
-background:#14263d;
-color:white;
+.clock{
 text-align:center;
-padding:15px;
-margin-top:40px;
+font-size:22px;
+margin:20px;
+font-weight:bold;
 }
 
 </style>
@@ -92,22 +68,18 @@ margin-top:40px;
 <body>
 
 <header>
-
 <h1>Dashboard Statistics</h1>
-
+<button onclick="toggleTheme()">Theme</button>
 </header>
 
 <nav>
-
 <a href="index.html">Home</a>
-<a href="dashboard.html">Dashboard</a>
 <a href="services.html">Services</a>
 <a href="reports.html">Reports</a>
-<a href="about.html">About</a>
 <a href="contact.html">Contact</a>
-<a href="logout.html">Logout</a>
-
 </nav>
+
+<div class="clock" id="clock"></div>
 
 <div class="container">
 
@@ -115,45 +87,80 @@ margin-top:40px;
 
 <div class="card">
 <h3>Total Users</h3>
-<p>1500</p>
+<p id="users">0</p>
 </div>
 
 <div class="card">
 <h3>Active Users</h3>
-<p>1250</p>
+<p id="active">0</p>
 </div>
 
 <div class="card">
 <h3>Revenue</h3>
-<p>₹3,00,000</p>
+<p id="revenue">0</p>
 </div>
 
 <div class="card">
 <h3>Transactions</h3>
-<p>5400</p>
+<p id="trans">0</p>
 </div>
 
 <div class="card">
 <h3>Notifications</h3>
-<p>32</p>
+<p id="notify">0</p>
 </div>
 
 <div class="card">
 <h3>Pending Tasks</h3>
-<p>18</p>
+<p id="tasks">0</p>
 </div>
 
 </div>
 
 </div>
 
-<footer>
+<script>
 
-<p>© 2026 Laptop Lending System</p>
+function counter(id,target){
 
-</footer>
+let count=0;
+
+let speed=target/100;
+
+let interval=setInterval(()=>{
+
+count+=speed;
+
+document.getElementById(id).innerHTML=Math.floor(count);
+
+if(count>=target){
+document.getElementById(id).innerHTML=target;
+clearInterval(interval);
+}
+
+},20);
+
+}
+
+counter("users",1500);
+counter("active",1250);
+counter("revenue",300000);
+counter("trans",5400);
+counter("notify",32);
+counter("tasks",18);
+
+setInterval(()=>{
+document.getElementById("clock").innerHTML=
+new Date().toLocaleString();
+},1000);
+
+function toggleTheme(){
+document.body.style.background=
+document.body.style.background=="black"?
+"#f4f6f9":"black";
+}
+
+</script>
 
 </body>
-
 </html>
-```

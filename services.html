@@ -1,22 +1,15 @@
-# `services.html`
-
-```html id="xk7pdm"
 <!DOCTYPE html>
-<html lang="en">
 
+<html>
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Services</title>
 
 <style>
 
 body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial;
 background:#f4f6f9;
+margin:0;
 }
 
 header{
@@ -33,36 +26,31 @@ text-align:center;
 }
 
 nav a{
-text-decoration:none;
 color:white;
+text-decoration:none;
 margin:15px;
-font-weight:bold;
 }
 
-nav a:hover{
-color:yellow;
-}
-
-section{
-background:white;
-margin:40px;
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 padding:40px;
-border-radius:15px;
-box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
-h2{
-color:#1e3a5f;
-margin-bottom:25px;
+.service-card{
+background:white;
+padding:30px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,.2);
+transition:.4s;
 }
 
-ol li{
-margin:20px 0;
-font-size:22px;
-padding:10px;
-background:#f4f6f9;
-border-left:5px solid #1e3a5f;
-border-radius:5px;
+.service-card:hover{
+transform:scale(1.05);
+background:#1e3a5f;
+color:white;
 }
 
 footer{
@@ -70,7 +58,6 @@ background:#14263d;
 color:white;
 text-align:center;
 padding:15px;
-margin-top:30px;
 }
 
 </style>
@@ -80,53 +67,48 @@ margin-top:30px;
 <body>
 
 <header>
-
 <h1>Our Services</h1>
-
 </header>
 
 <nav>
-
 <a href="index.html">Home</a>
 <a href="dashboard.html">Dashboard</a>
-<a href="services.html">Services</a>
 <a href="reports.html">Reports</a>
-<a href="about.html">About</a>
 <a href="contact.html">Contact</a>
-<a href="logout.html">Logout</a>
-
 </nav>
 
-<section>
+<div class="container">
 
-<h2>Available Services</h2>
+<div class="service-card">
+<h2>💻 Laptop Lending</h2>
+<p>Borrow laptops for academic work.</p>
+</div>
 
-<ol>
+<div class="service-card">
+<h2>📱 Tablet Lending</h2>
+<p>Access tablets for learning activities.</p>
+</div>
 
-<li>Laptop Lending</li>
+<div class="service-card">
+<h2>📽 Projector Booking</h2>
+<p>Reserve projectors for presentations.</p>
+</div>
 
-<li>Tablet Lending</li>
+<div class="service-card">
+<h2>🛠 Technical Support</h2>
+<p>24/7 technical assistance.</p>
+</div>
 
-<li>Projector Booking</li>
+<div class="service-card">
+<h2>🔧 Device Maintenance</h2>
+<p>Regular servicing of gadgets.</p>
+</div>
 
-<li>Technical Support</li>
-
-<li>Device Maintenance</li>
-
-</ol>
-
-</section>
+</div>
 
 <footer>
-
-<p>
-© 2026 Laptop and Gadget Lending System |
-Designed by Rekha Ramani
-</p>
-
+© 2026 Laptop & Gadget Lending System | Rekha Ramani
 </footer>
 
 </body>
-
 </html>
-```
